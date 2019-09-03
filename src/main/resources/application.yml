@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    username: sa
+    password:
+    driver_class_name: org.h2.Driver
+    continue-on-error: false
+  jpa:
+    hibernate:
+      ddl-auto:

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scoreboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1 th:text="#{title.list}">Welcome to the Scoreboard!</h1>
+    <div class="ScoreboardList">
+        <table>
+            <thead>
+            <tr>
+                <th th:text="#{scoreboard.personid}">Person ID</th>
+                <th th:text="#{scoreboard.name}">Name</th>
+                <th th:text="#{scoreboard.recordpredicted}">Record Predicted</th>
+                <th th:text="#{scoreboard.offensepredicted}">Offense Predicted</th>
+                <th th:text="#{scoreboard.points}">Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="part : ${participants}">
+                <td th:text="${{part.datePlanted}}">13/01/2011</td>
+                <td th:text="${sb.covered}? #{bool.true} : #{bool.false}">yes</td>
+                <td th:text="#{${'seedstarter.type.' + sb.type}}">Wireframe</td>
+                <td th:text="${#strings.arrayJoin(
+                               #messages.arrayMsg(
+                                   #strings.arrayPrepend(sb.features,'seedstarter.feature.')),
+                               ', ')}">Electric Heating, Turf</td>
+                <td>
+                    <table>
+                        <tbody>
+                        <tr th:each="row,rowStat : ${sb.rows}">
+                            <td th:text="${rowStat.count}">1</td>
+                            <td th:text="${row.variety.name}">Thymus Thymi</td>
+                            <td th:text="${row.seedsPerCell}">12</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
