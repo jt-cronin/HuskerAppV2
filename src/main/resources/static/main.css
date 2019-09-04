@@ -7,7 +7,12 @@
     margin-right: 12%;
 
 }
-
+body{
+    background-color: rgb(99, 7, 7);
+}
+.indexOpt{
+    text-align: center;
+}
 h1, h2, h3 {
     text-align: center;
 }
