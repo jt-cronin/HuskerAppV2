@@ -14,9 +14,9 @@ class staticController {
         return "greeting";
     }
 
-    @GetMapping("/rules")
-    public String rules(){
-        return "rules"
+    @GetMapping("/scoreboard")
+    public String scoreboard(){
+        return "scoreboard"
     }
 
 }
